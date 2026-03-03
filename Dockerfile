@@ -1,6 +1,6 @@
 FROM node:10.8.0-jessie
 
-# Set working directory
+# Set working directories
 WORKDIR /app
 
 # Copy package files
