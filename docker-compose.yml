@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+
+vulnerable-node:
+image: node:10.8.0-jessie
+container_name: vulnerable-node
+working_dir: /app
+volumes:
+- ./app:/app
+command: npm start
+ports:
+- "3000:3000"
+
+vulnerable-nginx:
+image: nginx:1.15
+container_name: vulnerable-nginx
+ports:
+- "8080:80"
+
+vulnerable-python:
+image: python:2.7
+container_name: vulnerable-python
+command: sleep infinity
+
+vulnerable-java:
+image: openjdk:8-jdk
+container_name: vulnerable-java
+command: sleep infinity
